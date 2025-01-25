@@ -1,0 +1,18 @@
+# Template file for 'guile-haunt'
+pkgname=guile-haunt
+version=0.3.0
+revision=1
+build_style=gnu-configure
+hostmakedepends="automake guile pkg-config"
+makedepends="texinfo guile-devel"
+depends="guile"
+short_desc="Implementation of CommonMark for Guile"
+maintainer="T.A. Ben Ali <ba.tahaaziz@gmail.com>"
+license="GPL-3.0-or-later"
+homepage="https://dthompson.us/projects/haunt.html"
+distfiles="https://files.dthompson.us/releases/haunt/haunt-${version}.tar.gz"
+checksum=98babed06be54a066c3ebc94410a91eb7cc48367e94d528131d3ba271499992b
+
+pre_configure() {
+   autoreconf -vif
+}
