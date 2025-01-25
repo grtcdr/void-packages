@@ -1,0 +1,19 @@
+# Template file for 'guile-commonmark'
+pkgname=guile-commonmark-git
+version=0.1.2
+revision=1
+build_style=gnu-configure
+hostmakedepends="automake guile pkg-config"
+makedepends="texinfo guile-devel gettext-devel"
+depends="guile"
+short_desc="Implementation of CommonMark for Guile"
+maintainer="T.A. Ben Ali <ba.tahaaziz@gmail.com>"
+license="GPL-3.0-or-later"
+_commit=538ffea25ca69d9f3ee17033534ba03cc27ba468
+homepage="https://github.com/OrangeShark/guile-commonmark"
+distfiles="${homepage}/archive/${_commit}.tar.gz"
+checksum=51ec6112ad21b47bcf5962f57c3fb8b2daf4bbf895cd83fc7fcac0f50e261375
+
+pre_configure() {
+   autoreconf -vfi
+}
