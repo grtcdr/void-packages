@@ -1,0 +1,16 @@
+# Template file for 'font-jetbrains-mono-ttf'
+pkgname=font-jetbrains-mono-ttf
+version=2.304
+revision=1
+depends="font-util"
+short_desc="Typeface made for developers"
+maintainer="Taha Aziz Ben Ali <ba.tahaaziz@gmail.com>"
+license="OFL-1.1"
+homepage="https://jetbrains.com/mono"
+distfiles="https://github.com/JetBrains/JetBrainsMono/releases/download/v${version}/JetBrainsMono-${version}.zip"
+checksum=6f6376c6ed2960ea8a963cd7387ec9d76e3f629125bc33d1fdcd7eb7012f7bbf
+font_dirs="/usr/share/fonts/TTF/jetbrains-mono"
+
+do_install() {
+    install -Dm644 fonts/ttf/*.ttf -t ${DESTDIR}/usr/share/fonts/TTF/jetbrains-mono
+}
