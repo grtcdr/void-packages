@@ -1,0 +1,16 @@
+# Template file for 'font-agave-ttf'
+pkgname=font-agave-ttf
+version=37
+revision=1
+depends="font-util"
+short_desc="succulent monospace programming font"
+maintainer="Taha Aziz Ben Ali <ba.tahaaziz@gmail.com>"
+license="MIT"
+homepage="https://b.agaric.net/page/agave"
+distfiles="https://github.com/blobject/agave/archive/refs/tags/v${version}.zip"
+checksum=afa7d892285624402de0ce1b9def8a957b492a15ae05124b298b52d8c68f4d4a
+font_dirs="/usr/share/fonts/TTF/agave"
+
+do_install() {
+    install -Dm644 dist/*.ttf -t ${DESTDIR}/usr/share/fonts/TTF/agave
+}
